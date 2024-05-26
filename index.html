@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FMT - M02 - Calculadora de Notas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>FMT - M02 - Calculadora</h1>
+        
+        <section>
+            <h2>Insira as notas</h2>
+            <input type="number" id="nota1" placeholder="Nota 1" step="0.1" min="0" max="10">
+            <input type="number" id="nota2" placeholder="Nota 2" step="0.1" min="0" max="10">
+            <input type="number" id="nota3" placeholder="Nota 3" step="0.1" min="0" max="10">
+            <input type="number" id="nota4" placeholder="Nota 4" step="0.1" min="0" max="10">
+            <button id="mediaButton" onclick="toggleMedia()">Calcular Média</button>
+            <div id="resultadoMedia" style="display: none;"></div>
+        </section>
+        
+        <section>
+            <h2>Insira os nomes dos alunos</h2>
+            <input type="text" id="aluno1" placeholder="Aluno 1">
+            <input type="text" id="aluno2" placeholder="Aluno 2">
+            <input type="text" id="aluno3" placeholder="Aluno 3">
+            <input type="text" id="aluno4" placeholder="Aluno 4">
+            <button id="nomesButton" onclick="toggleNomes()">Imprimir Nomes</button>
+            <div id="resultadoNomes" style="display: none;"></div>
+        </section>
+        
+        <section>
+            <h2>Tabuada</h2>
+            <input type="number" id="numeroTabuada" placeholder="Número da Tabuada" step="1" min="1">
+            <button id="tabuadaButton" onclick="toggleTabuada()">Mostrar Tabuada</button>
+            <div id="tabuada" style="display: none;"></div>
+        </section>
+
+        <section>
+            <h2>Questionário</h2>
+            <ol class="questionarioPerguntas">
+                <li>Qual o nome do aluno?</li>
+                <input type="text" id="questionario1" placeholder="Nome do aluno">
+                <li>Qual a idade do aluno?</li>
+                <input type="number" id="questionario2" placeholder="18" step="1" max="120">
+                <li>Qual a série do aluno?</li>
+                <input type="number" id="questionario3" placeholder="12" step="1" max="12">
+                <li>Qual o nome da escola?</li>
+                <input type="text" id="questionario4" placeholder="Nome da escola">
+                <li>Qual a sua matéria favorita?</li>
+                <input type="text" id="questionario5" placeholder="18">
+            </ol>
+            <button id="questionarioButton" onclick="toggleQuestionario()">Mostrar Respostas</button>
+            <div id="questionario" style="display: none;"></div>
+        </section>
+
+        <section>
+            <h2>Matéria</h2>
+            <p>Aperte o botão abaixo para informar nome de uma matéria e suas quatro notas.</p>
+            <button id="materiaButton" onclick="toggleDisciplina()">Informar Matéria</button>
+            <div id="materia" style="display: none;"></div>
+        </section>
+
+        <section>
+            <h2>Maior Número</h2>
+            <input type="number" id="numero1" placeholder="Número 1">
+            <input type="number" id="numero2" placeholder="Número 2">
+            <input type="number" id="numero3" placeholder="Número 3">
+            <input type="number" id="numero4" placeholder="Número 4">
+            <button id="maiorButton" onclick="toggleMaior()">Calcular Maior</button>
+            <div id="resultadoMaior" style="display: none;"></div>
+        </section>
+        
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
