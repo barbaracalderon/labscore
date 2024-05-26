@@ -117,11 +117,11 @@ function toggleQuestionario() {
         var confirmacao = confirm("Confirma os dados inseridos?\nNome do aluno: " + nomeAluno + "\nIdade do aluno: " + idadeAluno + "\nSérie do aluno: " + serieAluno + "\nNome da escola: " + nomeEscola + "\nMatéria favorita: " + materiaFavorita);
 
         if (confirmacao) {
-            questionarioDiv.innerHTML = "Nome do aluno: " + nomeAluno + "<br>" +
-                                        "Idade do aluno: " + idadeAluno + "<br>" +
-                                        "Série do aluno: " + serieAluno + "<br>" +
-                                        "Nome da escola: " + nomeEscola + "<br>" +
-                                        "Matéria favorita: " + materiaFavorita + "<br>";
+            questionarioDiv.innerHTML = "<strong>Nome do aluno</strong>: " + nomeAluno + "<br>" +
+                                        "<strong>Idade do aluno</strong>: " + idadeAluno + "<br>" +
+                                        "<strong>Série do aluno</strong>: " + serieAluno + "<br>" +
+                                        "<strong>Nome da escola</strong>: " + nomeEscola + "<br>" +
+                                        "<strong>Matéria favorita</strong>: " + materiaFavorita + "<br>";
             questionarioDiv.style.display = "block";
             questionarioButton.textContent = "Esconder Respostas";
         } else {
@@ -134,5 +134,53 @@ function toggleQuestionario() {
 }
 
 
+function toggleDisciplina() {
+    var materiaDiv = document.getElementById('materia');
+    var materiaButton = document.querySelector('.materiaButton');
+
+    if (materiaDiv.style.display === "none") {
+        var nomeMateria = prompt("Informe o nome da matéria:");
+        if (!nomeMateria) return;
+        
+        var notas = [];
+        var i = 1;
+        while (i <= 4) {
+            var nota = prompt("Informe a nota " + i + " (0-10):");
+            if (nota === null) return;
+            nota = parseFloat(nota);
+            if (!isNaN(nota) && nota >= 0 && nota <= 10) {
+                notas.push(nota);
+                i++;
+            } else {
+                alert("Por favor, insira uma nota válida (0-10).");
+            }
+        }
+
+        var disciplina = {
+            nomeMateria: nomeMateria,
+            notas: notas
+        };
+
+        var media = calcularMedia(notas);
+        var resultado = "<p><strong>Nome da matéria</strong>: " + disciplina.nomeMateria + "</p>";
+        resultado += "<p><strong>Notas</strong>: " + notas.join(", ") + "</p>";
+        resultado += "<p><strong>Média</strong>: " + media.toFixed(2) + "</p>";
+
+        materiaDiv.innerHTML = resultado;
+        materiaDiv.style.display = "block";
+        materiaButton.textContent = "Esconder Matéria";
+    } else {
+        materiaDiv.style.display = "none";
+        materiaButton.textContent = "Informar Matéria";
+    }
+}
+
+function calcularMedia(notasArray) {
+    var soma = 0;
+    for (var i = 0; i < notasArray.length; i++) {
+        soma += notasArray[i];
+    }
+    return soma / notasArray.length;
+}
 
 

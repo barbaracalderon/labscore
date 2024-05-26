@@ -24,6 +24,11 @@ section {
     margin: 40px 0;
     border: 1px solid #ffd700;
     padding: 40px;
+    color: #7e7e7e;
+}
+
+section p {
+    text-align: center;
 }
 
 input[type="number"], input[type="text"] {
@@ -53,7 +58,7 @@ button:hover {
     background-color: #c5a804;
 }
 
-#tabuadaButton, #mediaButton, #nomesButton, #questionarioButton {
+#tabuadaButton, #mediaButton, #nomesButton, #questionarioButton, #materiaButton {
     width: 50%;
     margin: 20px auto;
 }
@@ -68,9 +73,5 @@ table {
     border-collapse: collapse;
     margin: 20px 0;
     background-color: #444;
-}
-
-.questionarioPerguntas {
-    color: #7e7e7e;
 }
 
