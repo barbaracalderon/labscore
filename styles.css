@@ -58,7 +58,7 @@ button:hover {
     background-color: #c5a804;
 }
 
-#tabuadaButton, #mediaButton, #nomesButton, #questionarioButton, #materiaButton {
+#tabuadaButton, #mediaButton, #nomesButton, #questionarioButton, #materiaButton, #maiorButton {
     width: 50%;
     margin: 20px auto;
 }

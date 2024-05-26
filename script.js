@@ -183,4 +183,40 @@ function calcularMedia(notasArray) {
     return soma / notasArray.length;
 }
 
+function toggleMaior() {
+    var resultadoMaiorDiv = document.getElementById('resultadoMaior');
+    var maiorButton = document.getElementById('maiorButton');
+
+    if (resultadoMaiorDiv.style.display === "none") {
+        var numero1 = parseFloat(document.getElementById('numero1').value);
+        var numero2 = parseFloat(document.getElementById('numero2').value);
+        var numero3 = parseFloat(document.getElementById('numero3').value);
+        var numero4 = parseFloat(document.getElementById('numero4').value);
+
+        if (isNaN(numero1) || isNaN(numero2) || isNaN(numero3) || isNaN(numero4)) {
+            alert("Por favor, insira todos os números corretamente.");
+            return;
+        }
+
+        var numeros = [numero1, numero2, numero3, numero4];
+        var maior = encontrarMaiorNumero(numeros);
+
+        resultadoMaiorDiv.innerHTML = "<p><strong>O maior número</strong> é " + maior + "</p>";
+        resultadoMaiorDiv.style.display = "block";
+        maiorButton.textContent = "Esconder Maior";
+    } else {
+        resultadoMaiorDiv.style.display = "none";
+        maiorButton.textContent = "Calcular Maior";
+    }
+}
+
+function encontrarMaiorNumero(numerosArray) {
+    var maior = numerosArray[0];
+    for (var i = 1; i < numerosArray.length; i++) {
+        if (numerosArray[i] > maior) {
+            maior = numerosArray[i];
+        }
+    }
+    return maior;
+}
 
