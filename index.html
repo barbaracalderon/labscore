@@ -36,6 +36,24 @@
             <button id="tabuadaButton" onclick="toggleTabuada()">Mostrar Tabuada</button>
             <div id="tabuada" style="display: none;"></div>
         </section>
+
+        <section>
+            <h2>Questionário</h2>
+            <ol class="questionarioPerguntas">
+                <li>Qual o nome do aluno?</li>
+                <input type="text" id="questionario1" placeholder="Nome do aluno">
+                <li>Qual a idade do aluno?</li>
+                <input type="number" id="questionario2" placeholder="18" step="1" max="120">
+                <li>Qual a série do aluno?</li>
+                <input type="number" id="questionario3" placeholder="12" step="1" max="12">
+                <li>Qual o nome da escola?</li>
+                <input type="text" id="questionario4" placeholder="Nome da escola">
+                <li>Qual a sua matéria favorita?</li>
+                <input type="text" id="questionario5" placeholder="18">
+            </ol>
+            <button id="questionarioButton" onclick="toggleQuestionario()">Mostrar Respostas</button>
+            <div id="questionario" style="display: none;"></div>
+        </section>
         
     </div>
     

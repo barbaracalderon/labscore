@@ -102,3 +102,37 @@ function toggleNomes() {
         nomesButton.textContent = "Imprimir Nomes";
     }
 }
+
+function toggleQuestionario() {
+    var questionarioDiv = document.getElementById('questionario');
+    var questionarioButton = document.getElementById('questionarioButton');
+    
+    if (questionarioDiv.style.display === "none") {
+        var nomeAluno = document.getElementById('questionario1').value;
+        var idadeAluno = document.getElementById('questionario2').value;
+        var serieAluno = document.getElementById('questionario3').value;
+        var nomeEscola = document.getElementById('questionario4').value;
+        var materiaFavorita = document.getElementById('questionario5').value;
+
+        var confirmacao = confirm("Confirma os dados inseridos?\nNome do aluno: " + nomeAluno + "\nIdade do aluno: " + idadeAluno + "\nSérie do aluno: " + serieAluno + "\nNome da escola: " + nomeEscola + "\nMatéria favorita: " + materiaFavorita);
+
+        if (confirmacao) {
+            questionarioDiv.innerHTML = "Nome do aluno: " + nomeAluno + "<br>" +
+                                        "Idade do aluno: " + idadeAluno + "<br>" +
+                                        "Série do aluno: " + serieAluno + "<br>" +
+                                        "Nome da escola: " + nomeEscola + "<br>" +
+                                        "Matéria favorita: " + materiaFavorita + "<br>";
+            questionarioDiv.style.display = "block";
+            questionarioButton.textContent = "Esconder Respostas";
+        } else {
+            questionarioDiv.style.display = "none";
+        }
+    } else {
+        questionarioDiv.style.display = "none";
+        questionarioButton.textContent = "Mostrar Respostas";
+    }
+}
+
+
+
+
